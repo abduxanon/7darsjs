@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body id="body">
+<div class="app">
+    <div class="container">
+        <div id="wrapper">
+            <input type="text" placeholder=" salom">
+            <button id="add-btn"> add</button>
+        </div>
+        <div class="task"><p id="peading-tasks"> salom <span class="count-value">0</span>yaxshi (s) zor ota. </p></div>
+    </div>
+    <p id="error">input cannot be empty!</p>
+</div>
+<script src="./app.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #todo-input {
+        background-color: aqua;
+        border-radius: 20px;
+        /* display: inline-flex; */
+        /* align-items: center; */
+        /* justify-content: center; */
+      }
+      #todo-form {
+        /* background-color: aqua; */
+        border-radius: 20px;
+        display: flex;
+        /* width: 300px;
+        height: 200px; */
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+      }
+      #todo-list {
+        display: flex;
+        /* margin: auto; */
+        justify-content: center;
+      }
+    </style>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="soz kriting" />
+      <button type="submit">bosing</button>
+    </form>
+    <ul id="todo-list"></ul>
+
+    <script>
+      const form = document.getElementById("todo-form");
+      const input = document.getElementById("todo-input");
+      const list = document.getElementById("todo-list");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const todoText = input.value.trim();
+        if (todoText) {
+          const li = document.createElement("li");
+          li.textContent = todoText;
+          list.appendChild(li);
+          input.value = "";
+        }
+      });
+
+      list.addEventListener("click", (e) => {
+        if (e.target.tagName === "LI") {
+          e.target.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
