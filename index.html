@@ -1,25 +1,31 @@
 <!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Document</title>
-</head>
-<body id="body">
-<div class="app">
-    <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>to do list</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="container">
         <div id="wrapper">
-            <input type="text" placeholder=" salom">
-            <button id="add-btn"> add</button>
+          <input type="text" placeholder="Tasck to be Done.." name="" id="" />
+          <button id="add-btn">Add</button>
         </div>
-        <div class="task"><p id="peading-tasks"> salom <span class="count-value">0</span>yaxshi (s) zor ota. </p></div>
+        <div class="tasks">
+          <p id="pending-task">
+            You have <span class="count-value">0</span>tasks (s) to complete.
+          </p>
+        </div>
+      </div>
+      <p id="error">input canot be empty!</p>
     </div>
-    <p id="error">input cannot be empty!</p>
-</div>
-<script src="./app.js"></script>
-</body>
+    <script src="./app.js"></script>
+ 
+  </body>
 </html> -->
 
 <!DOCTYPE html>
@@ -28,60 +34,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <style>
-      #todo-input {
-        background-color: aqua;
-        border-radius: 20px;
-        /* display: inline-flex; */
-        /* align-items: center; */
-        /* justify-content: center; */
-      }
-      #todo-form {
-        /* background-color: aqua; */
-        border-radius: 20px;
-        display: flex;
-        /* width: 300px;
-        height: 200px; */
-        padding: 30px;
-        align-items: center;
-        justify-content: center;
-      }
-      #todo-list {
-        display: flex;
-        /* margin: auto; */
-        justify-content: center;
-      }
-    </style>
-    <form id="todo-form">
-      <input type="text" id="todo-input" placeholder="soz kriting" />
-      <button type="submit">bosing</button>
-    </form>
-    <ul id="todo-list"></ul>
+    <div id="myDIV" class="header">
+      <h2>Todo Ro'yxati</h2>
+      <input type="text" id="myInput" placeholder="Todo kiritng..." />
+      <span onclick="newElement()" class="addBtn">Qo'shish</span>
 
-    <script>
-      const form = document.getElementById("todo-form");
-      const input = document.getElementById("todo-input");
-      const list = document.getElementById("todo-list");
+      <ul id="myUL"></ul>
+    </div>
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const todoText = input.value.trim();
-        if (todoText) {
-          const li = document.createElement("li");
-          li.textContent = todoText;
-          list.appendChild(li);
-          input.value = "";
-        }
-      });
-
-      list.addEventListener("click", (e) => {
-        if (e.target.tagName === "LI") {
-          e.target.remove();
-        }
-      });
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>
